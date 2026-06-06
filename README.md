@@ -4,6 +4,8 @@ Ocaml Dream - webservice demo from Grok
 
 ## Pre-requisites and Run
 
+Tested with OCaml version 5.2.1
+
 `opam install dream`
 
 `opam exec ./server.exe`
