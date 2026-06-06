@@ -2,13 +2,12 @@
 Ocaml Dream - webservice demo from Grok
 
 
-## Setup
+## Pre-requisites and Run
 
 `opam install dream`
 
-## Test
+`opam exec ./server.exe`
 
-`opam exec ./server.exe'
 
 Open http://localhost:8080 in multiple browser tabs — you’ll see the server message appear.
 
