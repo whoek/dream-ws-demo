@@ -1,26 +1,6 @@
 (* server.,ml *)
 
 
-(*
-
-HOW IT WORKS
-
-Client tracking — A global Hashtbl stores active Dream.websocket connections (simple and sufficient for most cases).
-
-Broadcast — broadcast sends the same message to every connected client using Lwt_list.iter_p for concurrency.
-
-Periodic timer — start_periodic_broadcast uses Lwt_unix.sleep to send a message every 60 seconds.
-
-Error handling — The broadcast ignores failures (dead sockets) so one bad connection doesn't break the loop.
-
-
-
-Open http://localhost:8080 in multiple browser tabs — you’ll see the server message appear every minute in all of them.You can easily extend this (e.g., use a Mutex + Hashtbl if you need stronger synchronization, add rooms/channels, etc.). Let me know if you want a version with JSON messages or more features!
-
-*)
-
-
-
 (* ==================== Global clients ==================== *)
 let clients : (int, Dream.websocket) Hashtbl.t = Hashtbl.create 20
 
